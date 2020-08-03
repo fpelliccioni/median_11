@@ -349,20 +349,32 @@ def process(n,i,cost,comps,fn_name,fn_args,var1,var2,if_part,else_part, function
 
     functions_aliases[fn_name] = new_func_name
 
+#  template <int ia, int ib, Regular T, Regular U, StrictWeakOrdering R>
+#      requires(Same<T, U> && Domain<R, T>)
+#  inline constexpr
+#  auto select_0_2(T&& a, U&& b, R r) FN(
+#      CMP((ia < ib), R)(b, a, r) ? _b : _a
+#  )
+#  # n=2, i=1, cost=1: no comparisons done
+#  find_22(a,b) =
+#    if a > b
+#    then a
+#    else b
+
     code  = f'// {fn_name} ******************* \n'
     code += f'function {new_func_name}({stability_indices}{parameters}r)' + '{\n'
-    code += f'    cmp = compare_strict_or_reflexive({var1}i < {var2}i);\n'
-    code += f'    if (cmp.call({var1}, {var2}, r)) {return_if};\n'
-    code += f'    {return_else};\n'
+    code += f'    cmp = new compare_strict_or_reflexive({var1}i < {var2}i);\n'
+    code += f'    if (cmp.call({var2}, {var1}, r))\n        {return_else};\n'
+    code += f'    {return_if};\n'
     code += '}\n\n'
 
-# // find_54 ******************* 
-# function select_3_5_da_eb_ec(ai,bi,ci,di,ei,a,b,c,d,e,r) {
-#     cmp = compare_strict_or_reflexive(bi < ci)
-#     if (cmp.call(b, c, r)) return select_2_4_da_cb(ai,ci,ei,di,a,c,e,d,r)
-#     return select_2_4_da_cb(ai,bi,ei,di,a,b,e,d,r)
-# }
 
+    # code  = f'// {fn_name} ******************* \n'
+    # code += f'function {new_func_name}({stability_indices}{parameters}r)' + '{\n'
+    # code += f'    cmp = compare_strict_or_reflexive({var1}i < {var2}i);\n'
+    # code += f'    if (cmp.call({var1}, {var2}, r)) {return_if};\n'
+    # code += f'    {return_else};\n'
+    # code += '}\n\n'
 
     return code
 
