@@ -70,16 +70,16 @@ void exec_n_with_permutations(F median_f) {
 
     std::array<size_t, N> element;
     std::iota(std::begin(element), std::end(element), 0);
-    // element[1] = element[0];    // Check stability
-    // element[2] = element[0];    // Check stability
-    // element[3] = element[0];    // Check stability
-    // element[4] = element[0];    // Check stability
-    // element[5] = element[0];    // Check stability
-    // element[6] = element[0];    // Check stability
-    // element[7] = element[0];    // Check stability
-    // element[8] = element[0];    // Check stability
-    // element[9] = element[0];    // Check stability
-    // element[10] = element[0];    // Check stability
+    element[1] = element[0];    // Check stability
+    element[2] = element[0];    // Check stability
+    element[3] = element[0];    // Check stability
+    element[4] = element[0];    // Check stability
+    element[5] = element[0];    // Check stability
+    element[6] = element[0];    // Check stability
+    element[7] = element[0];    // Check stability
+    element[8] = element[0];    // Check stability
+    element[9] = element[0];    // Check stability
+    element[10] = element[0];    // Check stability
     std::cout << element << '\n';
     // return;
 
@@ -168,9 +168,10 @@ void test_simple(std::array<size_t, 11> const& times) {
 }
 
 int main() {
-    exec_n_with_permutations<11, 19>(test_select_5_11{});
+    exec_n_with_permutations<11, 18>(test_select_5_11{});
 
     // test_simple({5, 0, 1, 2, 3, 4, 6, 7, 8, 9, 10});
+    // test_simple({0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0});
 
     // auto m11 = select_5_11(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, std::less<>{});
     // std::cout << m11 << '\n';
