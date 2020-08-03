@@ -601,7 +601,12 @@ auto&& select_5_11(A&& a, B&& b, C&& c, D&& d, E&& e, F&& f, G&& g, H&& h, I&& i
     return select_5_11_kj<ci, di, ei, fi, gi, hi, ii, ji, ki, bi, ai>(std::forward<C>(c), std::forward<D>(d), std::forward<E>(e), std::forward<F>(f), std::forward<G>(g), std::forward<H>(h), std::forward<I>(i), std::forward<J>(j), std::forward<K>(k), std::forward<B>(b), std::forward<A>(a), r);
 }
 
-
+template <Regular A, Regular B, Regular C, Regular D, Regular E, Regular F, Regular G, Regular H, Regular I, Regular J, Regular K, StrictWeakOrdering R>
+    requires(Same<A, B> && Same<A, C> && Same<A, D> && Same<A, E> && Same<A, F> && Same<A, G> && Same<A, H> && Same<A, I> && Same<A, J> && Same<A, K> && Domain<R, A>)
+inline constexpr
+auto&& median_11(A&& a, B&& b, C&& c, D&& d, E&& e, F&& f, G&& g, H&& h, I&& i, J&& j, K&& k, R r) noexcept {
+    return select_5_11<0,1,2,3,4,5,6,7,8,9,10>(std::forward<C>(c), std::forward<D>(d), std::forward<E>(e), std::forward<F>(f), std::forward<G>(g), std::forward<H>(h), std::forward<I>(i), std::forward<J>(j), std::forward<K>(k), std::forward<B>(b), std::forward<A>(a), r);
+}
 
 
 } // namespace tao::algorithm

@@ -1,5 +1,6 @@
 /*
 g++ -O3 -std=c++17 -I/home/fernando/dev/tao/algorithm/include test.cpp
+clang++ -O3 -std=c++17 -I/Users/fernando/dev/tao-cpp/algorithm/include test.cpp
 */
 
 // #include "median_11_unstable.hpp"
@@ -65,7 +66,7 @@ void exec_n_with_permutations(F median_f) {
     size_t min_sort_comparissons = 9999;
 
     constexpr auto k = half(N);
-    constexpr auto q = factorial(N);
+    auto const q = factorial(N);
 
     std::array<size_t, N> element;
     std::iota(std::begin(element), std::end(element), 0);
@@ -151,13 +152,13 @@ struct test_select_5_11 {
         requires(Same<A, B> && Same<B, C> && Same<C, D> && Same<D, E> && Same<E, F> && Same<F, G> && Same<G, H> && Same<H, I> && Same<I, J> && Same<J, K> && Domain<R, A>)
     inline constexpr
     auto&& operator()(A&& a, B&& b, C&& c, D&& d, E&& e, F&& f, G&& g, H&& h, I&& i, J&& j, K&& k, R r) const noexcept {
-        return tao::algorithm::select_5_11(std::forward<A>(a), std::forward<B>(b), std::forward<C>(c), std::forward<D>(d), std::forward<E>(e), std::forward<F>(f), std::forward<G>(g), std::forward<H>(h), std::forward<I>(i), std::forward<J>(j), std::forward<K>(k), r);
+        return tao::algorithm::median_11(std::forward<A>(a), std::forward<B>(b), std::forward<C>(c), std::forward<D>(d), std::forward<E>(e), std::forward<F>(f), std::forward<G>(g), std::forward<H>(h), std::forward<I>(i), std::forward<J>(j), std::forward<K>(k), r);
     }
 };
 
 void test_simple(std::array<size_t, 11> const& times) {
     auto blocks = create_blocks(times);
-    auto m = tao::algorithm::select_5_11(
+    auto m = tao::algorithm::median_11(
         blocks[0], blocks[1], blocks[2], blocks[3],
         blocks[4], blocks[5], blocks[6], blocks[7],
         blocks[8], blocks[9], blocks[10], lt);
