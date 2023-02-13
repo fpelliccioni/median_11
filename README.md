@@ -1,6 +1,6 @@
 # Median of 11
 
-An algorithm for finding the median of 11 elements in a stable way with a maximum of 18 comparisons is presented here.
+An algorithm for finding the median of 11 elements in a [stable](https://en.wikipedia.org/wiki/Category:Stable_sorts) way with a maximum of 18 comparisons is presented here.
 Although its optimality is not known, there is currently no more efficient algorithm in terms of the number of comparisons.
 
 The algorithm is presented using the following programming languages:
