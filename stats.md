@@ -34,9 +34,9 @@
 
 ### Non forced inlined version:
 
-- `MacBook:      ?? MiB`
-- `Thinkpad:     ?? MiB`
-- `Thinkstation: 38 MiB`
+- `MacBook:      1.6 MiB`
+- `Thinkpad:     2.1 MiB`
+- `Thinkstation: 2.1 MiB`
 
 ### Force inline Version:
 
