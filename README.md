@@ -16,4 +16,4 @@ The reason for this is the size of the code, which is significantly larger than 
 
 ## Stats
 
-Check stats here: https://github.com/fpelliccioni/median_11/blob/master/stats.md
+[Check stats here](https://github.com/fpelliccioni/median_11/blob/master/stats.md)
