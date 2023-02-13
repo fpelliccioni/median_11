@@ -14,6 +14,8 @@ This algorithm is based on making only 18 comparisons to determine the median, w
 
 The reason for this is the size of the code, which is significantly larger than QuickSelect. The size of the code influences the load on the CPU's [instruction cache](https://en.wikipedia.org/wiki/CPU_cache), which can make the algorithm slower than QuickSelect. In addition, although the algorithm is almost optimal in theory, its implementation in specific programming languages can also affect its performance.
 
+In addition to the impact on the instruction cache of modern computer architectures, the large size of the code also affects the compilation time. This can be seen in our [statistics file](https://github.com/fpelliccioni/median_11/blob/master/stats.md), where longer compilation times are recorded as a result of the larger code size.
+
 ## Stats
 
 [Check stats here](https://github.com/fpelliccioni/median_11/blob/master/stats.md)
