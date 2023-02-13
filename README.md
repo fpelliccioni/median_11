@@ -7,7 +7,7 @@ The algorithm is presented using the following programming languages:
 
 - [C++17](https://github.com/fpelliccioni/median_11/blob/93905bf85f70a657242b957a88e26db23ed966d0/cpp/median_11_stable_18cmps.hpp)
 - [Python](https://github.com/fpelliccioni/median_11/blob/9285fb2df0fe69702b26881d4695310ce4b27f50/python/median_11_knuth.py)
-- Javascript
+- [Javascript](https://github.com/fpelliccioni/median_11/blob/6907b5d76a412400af46771cc13cd53a7b0ecfa9/javascript/median_11_knuth.js)
 - Pseudocode
 
 This algorithm is based on making only 18 comparisons to determine the median, which theoretically makes it more efficient than other algorithms such as QuickSelect. However, despite its theoretical optimization, the algorithm can prove to be much slower than [QuickSelect](https://en.wikipedia.org/wiki/Quickselect) in practice.
