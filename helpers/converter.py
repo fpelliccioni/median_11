@@ -1,3 +1,8 @@
+# Copyright Fernando Pelliccioni 2016-2023
+#
+# Distributed under the Boost Software License, Version 1.0. (See accompanying
+# file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
+
 import re
 
 
@@ -418,7 +423,7 @@ def main():
 
                 new_funct_code = process(n,i,cost,comps,fn_name,fn_args,var1,var2,if_part,else_part, functions_aliases)
                 new_code = new_funct_code + new_code
-        
+
     for k,v in functions_aliases.items():
         # print(k)
         # print(v)
