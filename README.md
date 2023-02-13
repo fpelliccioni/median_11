@@ -13,3 +13,7 @@ The algorithm is presented using the following programming languages:
 This algorithm is based on making only 18 comparisons to determine the median, which theoretically makes it more efficient than other algorithms such as QuickSelect. However, despite its theoretical optimization, the algorithm can prove to be much slower than [QuickSelect](https://en.wikipedia.org/wiki/Quickselect) in practice.
 
 The reason for this is the size of the code, which is significantly larger than QuickSelect. The size of the code influences the load on the CPU's [instruction cache](https://en.wikipedia.org/wiki/CPU_cache), which can make the algorithm slower than QuickSelect. In addition, although the algorithm is almost optimal in theory, its implementation in specific programming languages can also affect its performance.
+
+## Stats
+
+Check stats here: https://github.com/fpelliccioni/median_11/blob/master/stats.md
